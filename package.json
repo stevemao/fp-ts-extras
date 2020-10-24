@@ -1,0 +1,42 @@
+{
+  "name": "fp-ts-extras",
+  "version": "0.0.0",
+  "description": "fp-ts extra functions and utilities",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevemao/fp-ts-extras.git"
+  },
+  "keywords": [
+    "fp-ts",
+    "group",
+    "chop"
+  ],
+  "author": "Steve Mao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevemao/fp-ts-extras/issues"
+  },
+  "homepage": "https://github.com/stevemao/fp-ts-extras#readme",
+  "peerDependencies": {
+    "fp-ts": "^2.8.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^13.13.28",
+    "fp-ts": "^2.8.4",
+    "jest": "^26.6.1",
+    "ts-jest": "^26.4.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
