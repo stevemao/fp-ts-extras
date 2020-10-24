@@ -103,3 +103,7 @@ pipe(
   // compose with other `TaskEither`s
 );
 ```
+
+## heterogeneousSequence
+
+> `sequence` that works with [heterogeneous list](https://wiki.haskell.org/Heterogenous_collections)
