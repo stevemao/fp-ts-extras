@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "outDir": "./lib",
-        "declaration": true,
-        "strict": true,
-        "noImplicitReturns": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
-        "forceConsistentCasingInFileNames": true
-    },
-    "include": ["./src"]
+  "compilerOptions": {
+    "outDir": "./lib",
+    "declaration": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src"]
 }
