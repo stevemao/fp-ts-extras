@@ -38,3 +38,34 @@ assert.deepStrictEqual(parse(
 
 assert(E.isLeft(parse("abc")))
 ```
+
+## Record
+
+```ts
+import {union} from 'fp-ts-extras/lib/Record'
+
+assert.deepStrictEqual(union([{
+    foo: 'foo',
+}, {
+    bar: 'bar'
+}]), {
+    foo: 'foo',
+    bar: 'bar'
+})
+```
+
+## String
+
+```ts
+import {split,join} from 'fp-ts-extras/lib/String'
+import {pipe} from 'fp-ts/lib/pipeable'
+import * as assert from 'assert'
+
+const result = pipe(
+    "a,b,c",
+    split(','),
+    join(':')
+)
+
+assert.deepStrictEqual(result, "a:b:c")
+```
