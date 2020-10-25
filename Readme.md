@@ -90,7 +90,7 @@ assert.deepStrictEqual(result, "a:b:c");
 > Decode with error to reduce boilerplate
 
 ```ts
-import ioTsDecode from "io-ts-decode";
+import ioTsDecode from "fp-ts-extras/lib/decode";
 import * as t from "io-ts";
 import { pipe } from "fp-ts/lib/pipeable";
 
