@@ -9,3 +9,5 @@ export const filterEmptyString = filter((a: string) => a.length > 0);
 export const startsWith = (a: string) => (b: string) => b.startsWith(a);
 
 export const replace = (r: RegExp, a: string) => (b: string) => b.replace(r, a);
+
+export const includes = (a: string) => (b: string) => b.includes(a);
