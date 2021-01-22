@@ -11,3 +11,7 @@ export const startsWith = (a: string) => (b: string) => b.startsWith(a);
 export const replace = (r: RegExp, a: string) => (b: string) => b.replace(r, a);
 
 export const includes = (a: string) => (b: string) => b.includes(a);
+
+export const toLower = (a: string) => a.toLowerCase();
+
+export const toUpper = (a: string) => a.toUpperCase();
