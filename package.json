@@ -46,6 +46,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "mem": "^8.0.0",
     "to-error": "^1.0.3"
   },
   "husky": {

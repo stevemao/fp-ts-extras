@@ -13,6 +13,56 @@ assert.deepStrictEqual(groupBy(eqNumber)([1, 1, 2, 3, 3, 4]), [
 ]);
 ```
 
+## Pipeable
+
+Problem: I have a `task` and if I call
+
+```ts
+task();
+task();
+```
+
+it fires the internal promise twice. The expected behaviour is it should only fire once. The second call returns the same result as the first one.
+
+Use case: I have 3 tasks: `t1`, `t2`, `t3`. `tA` is called once `t1` and `t2` is done. `tB` is called once `t1` and `t3` is done. `tC` is called once `t2` and `t3` is done. With raw promise I could do
+
+```ts
+Promise.all([
+   Promise.all([t1, t2]).then(_ => tA)
+   Promise.all([t2, t3]).then(_ => tC)
+   Promise.all([t1, t3]).then(_ => tB)
+]).then(...)
+```
+
+But with Task
+
+```ts
+sequence([
+   pipe(sequence([t1, t2])), chain(_ => tA)),
+   pipe(sequence([t2, t3]), chain(_ => tC)),
+   pipe(sequence([t1, t3]), chain(_ => tB)),
+])
+...
+```
+
+side effects of `t1`, `t2`, `t3` will be fired twice each. `memPipe` will come in handy
+
+```ts
+import { memPipe } from "fp-ts-extras/lib/Pipeable";
+
+const t1 = memPipe(...)
+const t2 = memPipe(...)
+const t3 = memPipe(...)
+
+sequence([
+   pipe(sequence([t1, t2])), chain(_ => tA)),
+   pipe(sequence([t2, t3]), chain(_ => tC)),
+   pipe(sequence([t1, t3]), chain(_ => tB)),
+])
+```
+
+Each task only performs side effect once.
+
 ## json
 
 > Safe json methods with fp-ts
