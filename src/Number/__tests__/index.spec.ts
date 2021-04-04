@@ -3,10 +3,10 @@ import { parseInt } from "../";
 
 describe("parseInt", () => {
   test("should be success", () => {
-    expect(parseInt("2", 10)).toEqual(some(2));
+    expect(parseInt(10)("2")).toEqual(some(2));
   });
 
   test("should be failure", () => {
-    expect(parseInt("abc", 10)).toEqual(none);
+    expect(parseInt(10)("abc")).toEqual(none);
   });
 });
