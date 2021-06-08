@@ -11,7 +11,7 @@
     "test": "jest",
     "clean": "rm -rf lib",
     "build": "tsc",
-    "prepare": "npm run clean && npm run build"
+    "prepare": "npm run clean && npm run build && husky install"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,10 @@
   "homepage": "https://github.com/stevemao/fp-ts-extras#readme",
   "peerDependencies": {
     "fp-ts": "^2.10.4",
-    "io-ts": "^2.2.16"
+    "io-ts": "^2.2.16",
+    "io-ts-types": "^0.5.16",
+    "monocle-ts": "^2.3.10",
+    "newtype-ts": "^0.3.4"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
@@ -38,8 +41,11 @@
     "fp-ts": "^2.10.4",
     "husky": "^6.0.0",
     "io-ts": "^2.2.16",
+    "io-ts-types": "^0.5.16",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
+    "monocle-ts": "^2.3.10",
+    "newtype-ts": "^0.3.4",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.5",
     "ts-node": "^9.1.1",
@@ -48,11 +54,6 @@
   "dependencies": {
     "mem": "^8.1.1",
     "to-error": "^1.0.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{ts,css,md}": "prettier --write"
