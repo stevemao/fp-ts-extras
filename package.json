@@ -1,6 +1,6 @@
 {
   "name": "fp-ts-extras",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "fp-ts extra functions and utilities",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
