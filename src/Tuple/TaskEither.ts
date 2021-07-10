@@ -35,7 +35,7 @@ export function quintsequence<E, A, B, C, D, F>(
     TaskEither<E, D>,
     TaskEither<E, F>
   ]
-): TaskEither<E, [A, B, C, F]> {
+): TaskEither<E, [A, B, C, D, F]> {
   return sequenceReadonlyArray(te as any) as any;
 }
 
@@ -48,7 +48,7 @@ export function sexsequence<E, A, B, C, D, F, G>(
     TaskEither<E, F>,
     TaskEither<E, G>
   ]
-): TaskEither<E, [A, B, C, F, G]> {
+): TaskEither<E, [A, B, C, D, F, G]> {
   return sequenceReadonlyArray(te as any) as any;
 }
 
@@ -62,38 +62,7 @@ export function septsequence<E, A, B, C, D, F, G, H>(
     TaskEither<E, G>,
     TaskEither<E, H>
   ]
-): TaskEither<E, [A, B, C, F, G, H]> {
-  return sequenceReadonlyArray(te as any) as any;
-}
-
-export function octsequence<E, A, B, C, D, F, G, H, I>(
-  te: [
-    TaskEither<E, A>,
-    TaskEither<E, B>,
-    TaskEither<E, C>,
-    TaskEither<E, D>,
-    TaskEither<E, F>,
-    TaskEither<E, G>,
-    TaskEither<E, H>,
-    TaskEither<E, I>
-  ]
-): TaskEither<E, [A, B, C, F, G, H, I]> {
-  return sequenceReadonlyArray(te as any) as any;
-}
-
-export function nonsequence<E, A, B, C, D, F, G, H, I, J>(
-  te: [
-    TaskEither<E, A>,
-    TaskEither<E, B>,
-    TaskEither<E, C>,
-    TaskEither<E, D>,
-    TaskEither<E, F>,
-    TaskEither<E, G>,
-    TaskEither<E, H>,
-    TaskEither<E, I>,
-    TaskEither<E, J>
-  ]
-): TaskEither<E, [A, B, C, F, G, H, I, J]> {
+): TaskEither<E, [A, B, C, D, F, G, H]> {
   return sequenceReadonlyArray(te as any) as any;
 }
 
