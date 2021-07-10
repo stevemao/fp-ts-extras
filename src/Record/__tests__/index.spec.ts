@@ -1,4 +1,4 @@
-import union from "../";
+import { union } from "../";
 
 describe("union", () => {
   test("should successfully union all keys of all records", () => {

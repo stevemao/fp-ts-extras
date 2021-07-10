@@ -1,5 +1,5 @@
 import { IO } from "fp-ts/lib/IO";
-import { pipe } from "fp-ts/lib/pipeable";
+import { pipe } from "fp-ts/lib/function";
 import mem from "mem";
 
 export function memPipe<A>(a: A): A;

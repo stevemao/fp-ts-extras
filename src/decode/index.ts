@@ -1,4 +1,4 @@
-import { pipe } from "fp-ts/lib/pipeable";
+import { pipe } from "fp-ts/lib/function";
 import { TaskEither, fromEither } from "fp-ts/lib/TaskEither";
 import { Decoder } from "io-ts";
 import toError from "to-error";

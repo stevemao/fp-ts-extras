@@ -1,5 +1,5 @@
 import { split, join } from "..";
-import { pipe } from "fp-ts/lib/pipeable";
+import { pipe } from "fp-ts/lib/function";
 
 describe("String", () => {
   test("should successfully split and join", () => {
