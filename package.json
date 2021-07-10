@@ -38,6 +38,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.1",
+    "@types/uuid": "^8.3.1",
     "fp-ts": "^2.10.4",
     "husky": "^6.0.0",
     "io-ts": "^2.2.16",
@@ -53,7 +54,8 @@
   },
   "dependencies": {
     "mem": "^8.1.1",
-    "to-error": "^1.0.3"
+    "to-error": "^1.0.3",
+    "uuid": "^8.3.2"
   },
   "lint-staged": {
     "*.{ts,css,md}": "prettier --write"

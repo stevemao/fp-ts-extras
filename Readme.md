@@ -111,6 +111,10 @@ pipe(
 );
 ```
 
-## heterogeneousSequence
+## Tuple
 
-> `sequence` that works with [heterogeneous list](https://wiki.haskell.org/Heterogenous_collections)
+> Various useful functions on tuples, overloaded on tuple size.
+
+## UUID
+
+> UUID generator that returns type `UUID`
