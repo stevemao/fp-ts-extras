@@ -35,7 +35,7 @@ export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
 
       return pipe(rightResult, fold(constant(leftResult), t.success));
     },
-    (value: Either<LType, RType>) =>
+    (value) =>
       pipe(value, fold<LType, RType, LType | RType>(identity, identity))
   );
 };
