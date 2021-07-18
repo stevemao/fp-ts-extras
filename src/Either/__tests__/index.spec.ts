@@ -19,6 +19,22 @@ describe("eitherFromUnion", () => {
     expect(result).toEqual(right(left(3)));
   });
 
+  test("should return string", () => {
+    const T = eitherFromUnion(t.number, t.string);
+
+    const result = T.encode(right("foo"));
+
+    expect(result).toEqual("foo");
+  });
+
+  test("should return number", () => {
+    const T = eitherFromUnion(t.number, t.string);
+
+    const result = T.encode(left(3));
+
+    expect(result).toEqual(3);
+  });
+
   test("should fail", () => {
     const T = eitherFromUnion(t.number, t.string);
 

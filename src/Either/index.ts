@@ -1,6 +1,6 @@
-import { fold, left, map, right } from "fp-ts/lib/Either";
+import { Either, fold, left, map, right } from "fp-ts/lib/Either";
 import { either, EitherC } from "io-ts-types";
-import { constant, pipe } from "fp-ts/lib/function";
+import { constant, pipe, identity } from "fp-ts/lib/function";
 import * as t from "io-ts";
 
 export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
@@ -30,6 +30,7 @@ export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
 
       return pipe(rightResult, fold(constant(leftResult), t.success));
     },
-    e.encode
+    (value: Either<LType, RType>) =>
+      pipe(value, fold<LType, RType, LType | RType>(identity, identity))
   );
 };
