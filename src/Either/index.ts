@@ -1,13 +1,18 @@
 import { Either, fold, left, map, right } from "fp-ts/lib/Either";
-import { either, EitherC } from "io-ts-types";
+import { either } from "io-ts-types";
 import { constant, pipe, identity } from "fp-ts/lib/function";
 import * as t from "io-ts";
+import { Type } from "io-ts";
 
 export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
   leftCodec: L,
   rightCodec: R,
   name: string = `EitherFromUnion<${leftCodec.name}, ${rightCodec.name}>`
-): EitherC<L, R> => {
+): Type<
+  Either<t.TypeOf<L>, t.TypeOf<R>>,
+  t.TypeOf<L> | t.TypeOf<R>,
+  unknown
+> => {
   type LType = t.TypeOf<L>;
   type RType = t.TypeOf<R>;
 

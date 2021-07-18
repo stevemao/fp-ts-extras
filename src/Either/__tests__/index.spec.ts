@@ -19,6 +19,14 @@ describe("eitherFromUnion", () => {
     expect(result).toEqual(right(left(3)));
   });
 
+  test("should fail", () => {
+    const T = eitherFromUnion(t.number, t.string);
+
+    const result = T.decode(true);
+
+    expect(isLeft(result)).toEqual(true);
+  });
+
   test("should return string", () => {
     const T = eitherFromUnion(t.number, t.string);
 
@@ -33,13 +41,5 @@ describe("eitherFromUnion", () => {
     const result = T.encode(left(3));
 
     expect(result).toEqual(3);
-  });
-
-  test("should fail", () => {
-    const T = eitherFromUnion(t.number, t.string);
-
-    const result = T.decode(true);
-
-    expect(isLeft(result)).toEqual(true);
   });
 });
