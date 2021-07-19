@@ -18,9 +18,9 @@
     "url": "git+https://github.com/stevemao/fp-ts-extras.git"
   },
   "keywords": [
-    "fp-ts",
-    "group",
-    "chop"
+    "functional-programming",
+    "typescript",
+    "fp-ts"
   ],
   "author": "Steve Mao",
   "license": "MIT",
