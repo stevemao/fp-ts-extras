@@ -1,13 +1,9 @@
-import * as array from "./Array";
-import * as pipeable from "./Pipeable";
-import * as record from "./Record";
-import * as string from "./String";
-import * as decode from "./decode";
-import * as tuple from "./Tuple";
-
-export { array };
-export { pipeable };
-export { record };
-export { string };
-export { decode };
-export { tuple };
+export * as array from "./Array";
+export * as either from "./Either";
+export * as number from "./Number";
+export * as function from "./Function";
+export * as record from "./Record";
+export * as string from "./String";
+export * as taskEither from "./TaskEither";
+export * as tuple from "./Tuple";
+export * as uuid from "./UUID";

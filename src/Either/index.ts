@@ -3,6 +3,9 @@ import { either } from "io-ts-types";
 import { constant, pipe, identity } from "fp-ts/lib/function";
 import * as t from "io-ts";
 import { Type } from "io-ts";
+import { Decoder } from "io-ts";
+import toError from "to-error";
+import { mapLeft } from "fp-ts/lib/Either";
 
 export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
   leftCodec: L,
@@ -39,3 +42,6 @@ export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
       pipe(value, fold<LType, RType, LType | RType>(identity, identity))
   );
 };
+
+export const decode = <N, M>(T: Decoder<M, N>, data: M): Either<Error, N> =>
+  pipe(data, T.decode, mapLeft(toError));

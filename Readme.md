@@ -13,7 +13,7 @@ assert.deepStrictEqual(groupBy(eqNumber)([1, 1, 2, 3, 3, 4]), [
 ]);
 ```
 
-## Pipeable
+## Function
 
 Problem: I have a `task` and if I call
 
@@ -48,7 +48,7 @@ sequence([
 side effects of `t1`, `t2`, `t3` will be fired twice each. `memPipe` will come in handy
 
 ```ts
-import { memPipe } from "fp-ts-extras/lib/Pipeable";
+import { memPipe } from "fp-ts-extras/lib/Function";
 
 const t1 = memPipe(...)
 const t2 = memPipe(...)
@@ -88,7 +88,7 @@ assert.deepStrictEqual(
 
 ```ts
 import { split, join } from "fp-ts-extras/lib/String";
-import { pipe } from "fp-ts/lib/pipeable";
+import { pipe } from "fp-ts/lib/Function";
 import * as assert from "assert";
 
 const result = pipe("a,b,c", split(","), join(":"));
@@ -96,17 +96,17 @@ const result = pipe("a,b,c", split(","), join(":"));
 assert.deepStrictEqual(result, "a:b:c");
 ```
 
-## decode
+## TaskEither
 
 > Decode with error to reduce boilerplate
 
 ```ts
-import ioTsDecode from "fp-ts-extras/lib/decode";
+import { decode } from "fp-ts-extras/lib/TaskEither";
 import * as t from "io-ts";
-import { pipe } from "fp-ts/lib/pipeable";
+import { pipe } from "fp-ts/lib/Function";
 
 pipe(
-  ioTsDecode(t.string, null)
+  decode(t.string, null)
   // compose with other `TaskEither`s
 );
 ```
@@ -118,3 +118,8 @@ pipe(
 ## UUID
 
 > UUID generator that returns type `UUID`
+
+# Related projects
+
+- https://github.com/gcanti/fp-ts-contrib
+- https://github.com/samhh/fp-ts-std

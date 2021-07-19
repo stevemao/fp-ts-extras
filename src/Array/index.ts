@@ -8,6 +8,6 @@ export const groupBy = <A>(S: Eq<A>): ((as: Array<A>) => Array<Array<A>>) => {
   });
 };
 
-export const group = groupBy(eqStrict);
+export const group = <A>(as: Array<A>) => groupBy<A>(eqStrict)(as);
 
 export const includes = <T>(a: T) => (as: Array<T>) => as.includes(a);
