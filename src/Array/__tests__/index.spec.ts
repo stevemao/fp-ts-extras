@@ -7,7 +7,9 @@ describe("groupBy", () => {
     const expected = [[1, 1], [2], [3, 3], [4]];
     expect(reality).toStrictEqual(expected);
   });
+});
 
+describe("group", () => {
   test("should group", () => {
     const reality = group([1, 1, 2, 3, 3, 4]);
     const expected = [[1, 1], [2], [3, 3], [4]];

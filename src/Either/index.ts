@@ -43,5 +43,5 @@ export const eitherFromUnion = <L extends t.Mixed, R extends t.Mixed>(
   );
 };
 
-export const decode = <N, M>(T: Decoder<M, N>, data: M): Either<Error, N> =>
+export const decode = <I, A>(T: Decoder<I, A>, data: I): Either<Error, A> =>
   pipe(data, T.decode, mapLeft(toError));

@@ -102,6 +102,30 @@ sequence([
 
 Each task only performs side effect once.
 
+## JSON
+
+> encode/decode automatically when you stringify/parse
+
+Why? You can use your preferred algebraic data types in your business logic, and can be converted to traditional json automatically when you do http request or save stuff to db, and vice versa.
+
+```ts
+const T = t.type({
+  foo: optionFromNullable(t.string),
+});
+
+const result = stringify(T, {
+  foo: O.of("abc"),
+});
+// right '{"foo":"abc"}'
+
+const result = parse(T, '{"foo":"abc"}');
+/*
+right {
+  foo: O.of("abc"),
+}
+*/
+```
+
 ## Record
 
 ### union
