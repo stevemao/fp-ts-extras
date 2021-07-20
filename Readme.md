@@ -2,6 +2,8 @@
 
 ## Array
 
+### groupBy
+
 ```ts
 import { groupBy } from "fp-ts-extras/lib/Array";
 
@@ -13,7 +15,44 @@ assert.deepStrictEqual(groupBy(eqNumber)([1, 1, 2, 3, 3, 4]), [
 ]);
 ```
 
+## Option
+
+### partial
+
+> Drop-in replacement of `t.partial`
+
+Instead of returning `A | undefined`, it returns `Option<A>`
+
+```ts
+import { partial } from "fp-ts-extras/lib/Option";
+
+const B = partial({
+  bar: t.number,
+});
+```
+
+```ts
+import * as t from "io-ts";
+
+const User = t.type({
+  userId: t.number,
+  name: t.string,
+});
+
+const PartialUser = t.partial(User.props);
+
+type PartialUser = t.TypeOf<typeof PartialUser>;
+
+// same as
+type PartialUser = {
+  name: Option<string>;
+  age: Option<number>;
+};
+```
+
 ## Function
+
+### memPipe
 
 Problem: I have a `task` and if I call
 
@@ -65,6 +104,8 @@ Each task only performs side effect once.
 
 ## Record
 
+### union
+
 ```ts
 import { union } from "fp-ts-extras/lib/Record";
 
@@ -97,6 +138,8 @@ assert.deepStrictEqual(result, "a:b:c");
 ```
 
 ## TaskEither
+
+### decode
 
 > Decode with error to reduce boilerplate
 
